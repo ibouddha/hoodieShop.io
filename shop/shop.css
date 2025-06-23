@@ -1,0 +1,141 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #1f3366;
+  color: #fff;
+}
+
+.page-header .logo {
+  width: 10rem;
+}
+
+.cart-button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  background-color: #fff;
+  color: #1f3366;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cart-button:hover {
+  background-color: #f0f0f0;
+}
+
+.preview-section {
+  text-align: center;
+  padding: 2rem;
+  background-color: #1f3366;
+  color: #fff;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.hero-image {
+  width: 15rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+.add-to-cart-button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  background-color: #fff;
+  color: #1f3366;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-to-cart-button:hover {
+  background-color: #f0f0f0;
+}
+
+.gallery-section {
+  padding: 2rem;
+}
+
+.gallery-container {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.gallery-item {
+  width: 8rem;
+  height: 8rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: scale(1.05);
+}
+
+.gallery-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .page-header .logo {
+    width: 20vw;
+  }
+
+  .preview-section {
+    height: auto;
+    padding: 5vh 5vw;
+    gap: 4vh;
+  }
+
+  .hero-image {
+    width: 80vw;
+    max-height: 60vh;
+  }
+
+  .add-to-cart-button {
+    font-size: 1rem;
+  }
+
+  .gallery-container {
+    gap: 3vw;
+  }
+
+  .gallery-item {
+    width: 20vw;
+    height: 20vw;
+  }
+}

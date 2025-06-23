@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hoodie Pink</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="shop.css" />
+    <script src="shop.js" defer></script>
+</head>
+
+<body>
+
+    <header class="page-header">
+        <a href="../index.html"><img src="images/607bec1aae6ea38bbe1e7e2365cf91826f33179b.png" alt="FS Logo" class="logo" /></a>
+        <button class="cart-button" id="cartButton">Panier (0)</button>
+    </header>
+
+    <section id="preview" class="preview-section">
+
+        <div class="hero-content">
+            <img src="images/image2.png" alt="Preview" class="hero-image" />
+            <button class="add-to-cart-button" id="mainAddToCart">Ajouter au panier</button>
+        </div>
+
+        <div class="gallery-container">
+            
+        </div>
+    </section>
+    <script>
+        const images = {
+            "hoodie pink": 'images/fb14da88596a57e8d8b2f9a1462892a4ee22fedc.png',
+            "hoodie white": 'images/43c8bed7cc8cb21813b334df8f35a3aa912cca8f.png',
+            "hoodie head": 'images/9446ae09b79c2595edb1f6e37445800b6c69d83d.png'
+        };
+
+        document.querySelector('.gallery-container').innerHTML = ''; // Clear existing content        
+        for (const [name, src] of Object.entries(images)) {
+            const imgElement = document.createElement('img');
+            imgElement.src = src;
+            imgElement.alt = name;
+            imgElement.classList.add('gallery-image');
+
+            const galleryItem = document.createElement('div');
+            galleryItem.classList.add('gallery-item');
+            galleryItem.appendChild(imgElement);
+
+            document.querySelector('.gallery-container').appendChild(galleryItem);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,14 @@
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #ffffff;
+  color: #fefefe;
+}
+.page-container {
+  max-width: 1920px;
+  margin: 0 auto;
+  overflow: hidden;
+}
