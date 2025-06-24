@@ -1,20 +1,25 @@
+/* RESET */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
+/* TYPO + BASE */
 body {
-  margin: 0;
   font-family: 'Poppins', sans-serif;
   background-color: #f4f4f4;
   color: #333;
+  
 }
 
 html {
   scroll-behavior: smooth;
 }
 
+/* HEADER */
 .page-header {
   display: flex;
   justify-content: space-between;
@@ -40,16 +45,22 @@ html {
 }
 
 .cart-button:hover {
-  background-color: #f0f0f0;
+  background-color: #e0e0e0;
 }
 
+/* SECTION PREVIEW */
 .preview-section {
-  text-align: center;
-  padding: 2rem;
-  background-color: #1f3366;
+  /* min-height: 100vh; */
+  /* padding: 4rem 2rem; */
+  background: linear-gradient(145deg, #1f3366 0%, #10244e 100%);
   color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
+/* IMAGE PRINCIPALE */
 .hero-content {
   display: flex;
   flex-direction: column;
@@ -58,49 +69,62 @@ html {
 }
 
 .hero-image {
-  width: 15rem;
-  border-radius: 0.5rem;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  width: 25vw;
+  height: 45vh;
+  border-radius: 0.75rem;
+  /* box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.4); */
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
+.hero-image:hover {
+  transform: scale(1.05);
+}
+
+/* BOUTON PRINCIPAL */
 .add-to-cart-button {
-  padding: 0.5rem 1rem;
-  font-size: 1rem;
-  background-color: #fff;
-  color: #1f3366;
+  padding: 0.8rem 1.5rem;
+  font-size: 1.1rem;
+  background-color: #ff3366;
+  color: white;
   border: none;
-  border-radius: 0.5rem;
+  border-radius: 0.75rem;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s;
 }
 
 .add-to-cart-button:hover {
-  background-color: #f0f0f0;
+  background-color: #ff4477;
+  transform: translateY(-2px);
 }
 
-.gallery-section {
-  padding: 2rem;
-}
-
+/* GALERIE */
 .gallery-container {
   display: flex;
+  height: 29vh;
   gap: 1rem;
   justify-content: center;
   flex-wrap: wrap;
+  margin-top: 2.5rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 1rem;
+  backdrop-filter: blur(5px);
+  box-shadow: inset 0 0 1rem rgba(255, 255, 255, 0.05);
 }
 
 .gallery-item {
-  width: 8rem;
-  height: 8rem;
+  width: 12vw;
+  height: 25vh;
   border-radius: 0.5rem;
   overflow: hidden;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
-  cursor: pointer;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease;
 }
 
 .gallery-item:hover {
-  transform: scale(1.05);
+  transform: scale(1.1);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
+  cursor: pointer;
 }
 
 .gallery-image {
@@ -116,9 +140,7 @@ html {
   }
 
   .preview-section {
-    height: auto;
     padding: 5vh 5vw;
-    gap: 4vh;
   }
 
   .hero-image {
@@ -128,10 +150,7 @@ html {
 
   .add-to-cart-button {
     font-size: 1rem;
-  }
-
-  .gallery-container {
-    gap: 3vw;
+    padding: 0.6rem 1rem;
   }
 
   .gallery-item {

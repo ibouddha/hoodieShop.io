@@ -57,11 +57,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    document.addEventListener('mouseleave', (e) => {
-        if (e.target.classList.contains('gallery-item')) {
-            e.target.style.transform = 'rotateX(0deg) rotateY(0deg) scale(1)';
-        }
-    });
+    // document.addEventListener('mouseleave', (e) => {
+    //     if (e.target.classList.contains('gallery-item')) {
+    //         e.target.style.transform = 'rotateX(0deg) rotateY(0deg) scale(1)';
+    //     }
+    // });
 
     // ✅ Ajouter un produit au panier
     function addToCart(name, price, image) {
@@ -156,13 +156,13 @@ document.addEventListener('DOMContentLoaded', () => {
                         <img src="${item.image}" alt="${item.name}" style="width: 50px; height: 50px; object-fit: cover; margin-right: 1rem; border-radius: 5px;">
                         <div style="flex-grow: 1;">
                             <h4 style="margin: 0;">${item.name} x ${item.quantity}</h4>
-                            <p style="margin: 0; color: #666;">${item.price.toFixed(2)}€ x ${item.quantity} = ${(itemTotal).toFixed(2)}€</p>
+                            <p style="margin: 0; color: #666;">${item.price.toFixed(2)}F CFA x ${item.quantity} = ${(itemTotal).toFixed(2)}F CFA</p>
                         </div>
                         <button onclick="removeFromCart(${index})" style="background-color: #ff4444; color: white; border: none; padding: 5px 10px; border-radius: 3px; cursor: pointer;">Supprimer</button>
                     </div>
                 `;
             });
-            cartHTML += `<div style="text-align: right; font-weight: bold; font-size: 1.2rem; margin-top: 1rem;">Total: ${total.toFixed(2)}€</div>`;
+            cartHTML += `<div style="text-align: right; font-weight: bold; font-size: 1.2rem; margin-top: 1rem;">Total: ${total.toFixed(2)}F CFA</div>`;
         }
 
         cartHTML += `
@@ -192,17 +192,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 🎯 Bouton principal
     mainAddToCartButton.addEventListener('click', () => {
-        addToCart('Produit Principal', 29.99, previewImage.src);
+        addToCart('Produit Principal', 20000, previewImage.src);
     });
 
     // 🎯 Ajout depuis la galerie (double clic)
     document.addEventListener('dblclick', (e) => {
         if (e.target.classList.contains('gallery-image')) {
             const name = e.target.alt || 'Produit';
-            addToCart(name, 29.99, e.target.src);
+            addToCart(name, 20000, e.target.src);
         }
     });
 
     // 🎯 Ouvrir le panier
     cartButton.addEventListener('click', showCartModal);
 });
+
+
